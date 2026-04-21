@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Get in touch with Shiva Ram — Product Designer from Hyderabad. Available for freelance and full-time roles.">
+  <title>Contact — Shiva Ram</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/nav.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/contact.css">
+</head>
+<body>
+
+  <div id="nav-placeholder"></div>
+
+  <main class="contact-page">
+    <div class="container">
+
+      <!-- ── Hero ── -->
+      <div class="contact-hero">
+        <p class="contact-hero__eyebrow reveal">Contact</p>
+        <h1 class="contact-hero__headline reveal reveal--delay-1">
+          Let's build something<br>worth using.
+        </h1>
+        <p class="contact-hero__body reveal reveal--delay-2">
+          I'm currently open to freelance projects and full-time product design roles.
+          Whether you have a brief, a vague idea, or just want to say hello — drop me a message.
+        </p>
+      </div>
+
+      <!-- ── Body ── -->
+      <div class="contact-body">
+
+        <!-- ── FORM ── -->
+        <div class="reveal">
+          <form class="contact-form" id="contactForm" novalidate>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="firstName">First Name *</label>
+                <input class="form-input" type="text" id="firstName" name="firstName"
+                  placeholder="Alex" required autocomplete="given-name">
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="lastName">Last Name</label>
+                <input class="form-input" type="text" id="lastName" name="lastName"
+                  placeholder="Johnson" autocomplete="family-name">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="email">Email *</label>
+              <input class="form-input" type="email" id="email" name="email"
+                placeholder="alex@company.com" required autocomplete="email">
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="company">Company / Organisation</label>
+              <input class="form-input" type="text" id="company" name="company"
+                placeholder="Acme Inc." autocomplete="organization">
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="subject">What's this about? *</label>
+              <select class="form-select" id="subject" name="subject" required>
+                <option value="" disabled selected>Select a topic…</option>
+                <option value="freelance">Freelance project</option>
+                <option value="fulltime">Full-time role</option>
+                <option value="collaboration">Collaboration</option>
+                <option value="feedback">Portfolio feedback</option>
+                <option value="other">Something else</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="budget">Budget range (optional)</label>
+              <select class="form-select" id="budget" name="budget">
+                <option value="" disabled selected>Select a range…</option>
+                <option value="<500">Under ₹50k</option>
+                <option value="500-1000">₹50k – ₹1L</option>
+                <option value="1000-3000">₹1L – ₹3L</option>
+                <option value="3000+">₹3L+</option>
+                <option value="discuss">Let's discuss</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="message">Message *</label>
+              <textarea class="form-textarea" id="message" name="message"
+                placeholder="Tell me about your project, your timeline, or just say hi…"
+                required rows="6"></textarea>
+            </div>
+
+            <button type="submit" class="form-submit" id="submitBtn">Send Message</button>
+
+            <p class="form-note">
+              I typically respond within 24 hours.<br>
+              You can also reach me directly at
+              <a href="mailto:shivaram.uiux.designer@gmail.com" style="color:var(--color-text-secondary);text-decoration:underline;text-underline-offset:3px;">
+                shivaram.uiux.designer@gmail.com
+              </a>
+            </p>
+
+          </form>
+        </div>
+
+
+        <!-- ── SIDEBAR ── -->
+        <aside class="contact-info reveal reveal--delay-2">
+
+          <!-- Quick info card -->
+          <div class="contact-info-card">
+            <h2 class="contact-info-card__title">Get in touch</h2>
+            <p class="contact-info-card__sub">
+              Based in Hyderabad, working with clients everywhere.
+              Open to remote and hybrid opportunities.
+            </p>
+
+            <div class="contact-links">
+              <a href="mailto:shivaram.uiux.designer@gmail.com" class="contact-link">
+                <span class="contact-link__icon">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                </span>
+                shivaram.uiux.designer@gmail.com
+              </a>
+
+              <a href="https://linkedin.com/in/shivaramprasaduiuxdesigner" target="_blank" rel="noopener" class="contact-link">
+                <span class="contact-link__icon">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+                </span>
+                linkedin.com/in/shivaramprasaduiuxdesigner
+              </a>
+
+              <a href="https://shivaramuiuxdesigner-ai.github.io/Portfolio" target="_blank" rel="noopener" class="contact-link">
+                <span class="contact-link__icon">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+                </span>
+                Portfolio Website ↗
+              </a>
+            </div>
+
+            <div class="contact-availability">
+              <span class="contact-availability-dot"></span>
+              <span class="contact-availability-text">Available for freelance &amp; full-time roles</span>
+            </div>
+          </div>
+
+          <!-- What I'm looking for card -->
+          <div class="contact-info-card">
+            <h3 class="contact-info-card__title" style="font-size: var(--text-base);">What I'm looking for</h3>
+            <p class="contact-info-card__sub" style="margin-bottom: 0; font-size: var(--text-sm);">
+              Product design roles in fintech, healthcare, or enterprise SaaS.
+              Companies where design has a seat at the product table — not just the delivery queue.
+            </p>
+          </div>
+
+          <!-- Resume download -->
+          <a href="assets/resume.pdf" class="btn btn--ghost" download style="justify-content: center; gap: var(--space-3);">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Download Resume
+          </a>
+
+        </aside>
+      </div>
+    </div>
+  </main>
+
+  <div id="footer-placeholder"></div>
+
+  <script src="js/partials.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/contact.js"></script>
+</body>
+</html>

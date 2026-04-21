@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Shiva Ram — Product Designer from Hyderabad designing end-to-end digital experiences at the intersection of user psychology and business logic.">
+  <title>Shiva Ram — Product Designer</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/nav.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/home.css">
+</head>
+<body>
+
+  <!-- Nav placeholder (injected by partials.js) -->
+  <div id="nav-placeholder"></div>
+
+  <main>
+
+    <!-- ── HERO ── -->
+    <section class="hero">
+      <div class="hero__bg">
+        <!-- Left mockup image -->
+        <div class="hero__bg-left">
+          <!--
+            REPLACE YOUR IMAGE HERE
+            Recommended: A mockup of FlowFund or any project screenshot
+            Size: 800×1200px, dark background
+          -->
+          <img
+            class="hero__bg-img"
+            src="assets/images/hero-mockup-left.svg"
+            alt=""
+            aria-hidden="true"
+            data-parallax="0.15"
+          >
+        </div>
+        <!-- Right mockup image -->
+        <div class="hero__bg-right">
+          <!--
+            REPLACE YOUR IMAGE HERE
+            Recommended: A second mockup (OnaWave or Habit Tracker)
+            Size: 800×1200px, dark background
+          -->
+          <img
+            class="hero__bg-img"
+            src="assets/images/thumb-habittracker.svg"
+            alt=""
+            aria-hidden="true"
+            data-parallax="0.2"
+          >
+        </div>
+      </div>
+
+      <div class="hero__content">
+        <p class="hero__eyebrow reveal">
+          Product Designer
+          <span class="hero__eyebrow-dot"></span>
+          Hyderabad
+        </p>
+
+        <h1 class="hero__headline reveal reveal--delay-1">
+          I design products people<br>actually want to use.
+        </h1>
+
+        <p class="hero__body reveal reveal--delay-2">
+          I'm Shiva Ram — a product designer who works at the intersection of user psychology and business logic.
+          I don't just make things look good. I make them work well enough that the business notices.
+        </p>
+
+        <p class="hero__meta reveal reveal--delay-3">
+          Fintech
+          <span class="hero__meta-sep">·</span>
+          SaaS
+          <span class="hero__meta-sep">·</span>
+          Design Systems
+          <span class="hero__meta-sep">·</span>
+          6 projects
+          <span class="hero__meta-sep">·</span>
+          60+ screens
+        </p>
+
+        <div class="hero__cta reveal reveal--delay-4">
+          <a href="#gallery" class="btn btn--primary">See My Work</a>
+          <a href="assets/Shivaram_Product_Designer_Resume.pdf" class="btn btn--outline" target="_blank" download>Download Resume</a>
+        </div>
+      </div>
+
+      <div class="hero__scroll" aria-hidden="true">
+        <div class="hero__scroll-line"></div>
+        <span>Scroll</span>
+      </div>
+    </section>
+
+
+    <!-- ── PROJECT GALLERY ── -->
+    <section class="gallery section" id="gallery">
+      <div class="container">
+
+        <div class="gallery__header reveal">
+          <h2 class="gallery__title">Project Gallery</h2>
+          <span class="gallery__count">4 case studies</span>
+        </div>
+
+        <!-- ── Card 1: FlowFund ── -->
+        <article class="project-card reveal" data-tilt data-tilt-max="4">
+          <a href="project-flowfund.html" class="project-card__image" aria-label="FlowFund – view project">
+            <!--
+              REPLACE YOUR IMAGE HERE
+              FlowFund iPhone mockup on dark/orange textured background
+              Size: 800×600px
+            -->
+            <img
+              src="assets/images/thumb-flowfund.svg"
+              alt="FlowFund iOS personal finance app for freelancers"
+              loading="lazy"
+            >
+            <div class="project-card__overlay">
+              <span class="project-card__view-label">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                View Project
+              </span>
+            </div>
+          </a>
+
+          <div class="project-card__info">
+            <div class="project-card__meta">
+              <span class="project-card__meta-item">Role: Product Designer</span>
+              <span class="project-card__meta-sep">·</span>
+              <span class="project-card__meta-item">Duration: 02 Weeks</span>
+              <span class="project-card__meta-sep">·</span>
+              <span class="project-card__meta-item">Platform: iOS</span>
+            </div>
+
+            <h3 class="project-card__name">FlowFund</h3>
+
+            <p class="project-card__desc">
+              Freelancers don't have a salary. Their income is lumpy, unpredictable, and anxiety-inducing.
+              Most budgeting apps are built for people with steady paychecks. FlowFund isn't.
+            </p>
+
+            <a href="project-flowfund.html" class="project-card__arrow">
+              View case study
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+            </a>
+          </div>
+        </article>
+
+
+        <!-- ── Card 2: OnaWave (reversed) ── -->
+        <article class="project-card project-card--reverse reveal" data-tilt data-tilt-max="4">
+          <a href="project-onawave.html" class="project-card__image" aria-label="OnaWave – view project">
+            <!--
+              REPLACE YOUR IMAGE HERE
+              OnaWave laptop/dashboard mockup, dark clinical theme
+              Size: 800×600px
+            -->
+            <img
+              src="assets/images/thumb-onawave.svg"
+              alt="OnaWave Clinician Dashboard – dark medical UI"
+              loading="lazy"
+            >
+            <div class="project-card__overlay">
+              <span class="project-card__view-label">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                View Project
+              </span>
+            </div>
+          </a>
+
+          <div class="project-card__info">
+            <div class="project-card__meta">
+              <span class="project-card__meta-item">Role: UX/UI Designer</span>
+              <span class="project-card__meta-sep">·</span>
+              <span class="project-card__meta-item">Duration: Assignment</span>
+              <span class="project-card__meta-sep">·</span>
+              <span class="project-card__meta-item">Platform: Web (Desktop)</span>
+            </div>
+
+            <h3 class="project-card__name">OnaWave — Clinician Dashboard</h3>
+
+            <p class="project-card__desc">
+              Clinicians make life-affecting decisions under pressure. Badly designed dashboards don't just waste time — they create risk.
+              OnaWave needed to show 28 days of patient data clearly, without a single unnecessary click.
+            </p>
+
+            <a href="project-onawave.html" class="project-card__arrow">
+              View case study
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+            </a>
+          </div>
+        </article>
+
+
+        <!-- ── Card 3: Habit Tracker ── -->
+        <article class="project-card reveal" data-tilt data-tilt-max="4">
+          <a href="project-habittracker.html" class="project-card__image" aria-label="Habit Tracker – view project">
+            <!--
+              REPLACE YOUR IMAGE HERE
+              StreakShield/Habit Tracker iPhone mockup on circular ring pedestal
+              Size: 800×600px
+            -->
+            <img
+              src="assets/images/thumb-habittracker.svg"
+              alt="Habit Tracker iOS app – StreakShield"
+              loading="lazy"
+            >
+            <div class="project-card__overlay">
+              <span class="project-card__view-label">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                View Project
+              </span>
+            </div>
+          </a>
+
+          <div class="project-card__info">
+            <div class="project-card__meta">
+              <span class="project-card__meta-item">Role: Product Designer</span>
+              <span class="project-card__meta-sep">·</span>
+              <span class="project-card__meta-item">Duration: 02 weeks</span>
+              <span class="project-card__meta-sep">·</span>
+              <span class="project-card__meta-item">Platform: iOS</span>
+            </div>
+
+            <h3 class="project-card__name">Habit Tracker</h3>
+
+            <p class="project-card__desc">
+              27+ screens with exhaustive state design — 15 onboarding states, 7 Today Tab states, Someday queue, and Milestone celebrations.
+              Built for the miss day, not just the win day.
+            </p>
+
+            <a href="project-habittracker.html" class="project-card__arrow">
+              View case study
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+            </a>
+          </div>
+        </article>
+
+
+        <!-- ── Card 4: Volt DS (reversed) ── -->
+        <article class="project-card project-card--reverse reveal" data-tilt data-tilt-max="4">
+          <a href="project-voltds.html" class="project-card__image" aria-label="Volt DS – view project">
+            <!--
+              REPLACE YOUR IMAGE HERE
+              Volt DS Figma component grid / design tokens screenshot
+              Size: 800×600px
+            -->
+            <img
+              src="assets/images/thumb-voltds.svg"
+              alt="Volt DS – Figma-only design system"
+              loading="lazy"
+            >
+            <div class="project-card__overlay">
+              <span class="project-card__view-label">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                View Project
+              </span>
+            </div>
+          </a>
+
+          <div class="project-card__info">
+            <div class="project-card__meta">
+              <span class="project-card__meta-item">Role: Design Systems</span>
+              <span class="project-card__meta-sep">·</span>
+              <span class="project-card__meta-item">Duration: Ongoing</span>
+              <span class="project-card__meta-sep">·</span>
+              <span class="project-card__meta-item">Platform: Figma</span>
+            </div>
+
+            <h3 class="project-card__name">Volt DS</h3>
+
+            <p class="project-card__desc">
+              I kept building the same button in every project. I wanted a system that made the right decision the default one.
+              20+ components, full token architecture, Web/iOS/Android.
+            </p>
+
+            <a href="project-voltds.html" class="project-card__arrow">
+              View case study
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+            </a>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+
+    <!-- ── CTA STRIP ── -->
+    <section class="home-cta">
+      <div class="container">
+        <h2 class="home-cta__headline reveal">Have a project<br>in mind?</h2>
+        <p class="home-cta__sub reveal reveal--delay-1">Let's figure it out together.</p>
+        <div class="home-cta__actions reveal reveal--delay-2">
+          <a href="contact.html" class="btn btn--primary btn--lg">Start a conversation</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer placeholder -->
+  <div id="footer-placeholder"></div>
+
+  <!-- Scripts -->
+  <script src="js/partials.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
