@@ -78,9 +78,9 @@ const footerHTML = `
         <p class="footer__nav-title">Projects</p>
         <ul class="footer__nav-links">
           <li><a href="project-flowfund.html"   class="footer__nav-link">FlowFund</a></li>
-          <li><a href="project-onawave.html"     class="footer__nav-link">OnaWave Medical</a></li>
+          <li><a href="project-onawave.html"     class="footer__nav-link">Brainstrata</a></li>
           <li><a href="project-habittracker.html"class="footer__nav-link">Habit Tracker</a></li>
-          <li><a href="project-voltds.html"      class="footer__nav-link">Volt DS</a></li>
+          <li><a href="project-voltds.html"      class="footer__nav-link">HumAIns</a></li>
         </ul>
       </div>
 
@@ -88,7 +88,7 @@ const footerHTML = `
 
     <!-- Bottom bar -->
     <div class="footer__bottom">
-      <p class="footer__copy">© 2025 Neelakantam Shiva Ram Prasad. All rights reserved.</p>
+      <p class="footer__copy">© 2026 Neelakantam Shiva Ram Prasad. All rights reserved.</p>
       <div class="footer__status">
         <span class="footer__status-dot"></span>
         Available for freelance work

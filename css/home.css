@@ -26,7 +26,7 @@
 .hero__bg-right {
   position: absolute;
   top: 0; bottom: 0;
-  width: 42%;
+  width: 50%;
 }
 .hero__bg-left  { left: 0; }
 .hero__bg-right { right: 0; }
