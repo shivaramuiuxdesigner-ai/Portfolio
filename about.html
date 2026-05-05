@@ -6,9 +6,9 @@
   <meta name="description" content="About Shiva Ram — Product Designer from Hyderabad. Engineering school taught me to think. Design taught me to listen.">
   <title>About — Shiva Ram</title>
 
+  <link rel="preconnect" href="https://api.fontshare.com">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="css/tokens.css">
   <link rel="stylesheet" href="css/base.css">
@@ -23,13 +23,9 @@
   <main>
 
     <!-- ── ABOUT HERO ── -->
-    <section class="about-hero" style="padding-top: var(--nav-height);">
+    <!-- padding-top handled by about.css, not inline style -->
+    <section class="about-hero">
       <div class="about-hero__bg">
-        <!--
-          REPLACE YOUR IMAGE HERE
-          Your portrait photo — black & white editorial feel
-          Size: 1440×900px recommended, face/upper body visible
-        -->
         <img
           src="assets/images/about-portrait.svg"
           alt="Shiva Ram — Product Designer"
@@ -63,7 +59,6 @@
           <div class="about-section__aside">
             <p class="about-section__label reveal">Where I Came From</p>
           </div>
-
           <div>
             <h2 class="about-section__headline reveal">
               Engineering school taught me to think.<br>
@@ -93,7 +88,6 @@
           <div class="about-section__aside">
             <p class="about-section__label reveal">What I Do Now</p>
           </div>
-
           <div>
             <h2 class="about-section__headline reveal">
               End-to-end design.<br>
@@ -111,19 +105,19 @@
             <div class="skills-grid reveal reveal--delay-2">
               <div class="skill-block">
                 <p class="skill-block__title">UX Research</p>
-                <p class="skill-block__items">Personas · Journey Maps · JTBD Usability Testing · Card Sorting</p>
+                <p class="skill-block__items">Personas · Journey Maps · JTBD · Usability Testing · Card Sorting</p>
               </div>
               <div class="skill-block">
                 <p class="skill-block__title">Product Design</p>
-                <p class="skill-block__items">End-to-end · Design Thinking Information Architecture · Flows</p>
+                <p class="skill-block__items">End-to-end · Design Thinking · Information Architecture · Flows</p>
               </div>
               <div class="skill-block">
                 <p class="skill-block__title">UI &amp; Visual</p>
-                <p class="skill-block__items">Hi-fi Screens · Color Systems Typography · Grid · WCAG 2.1 AA</p>
+                <p class="skill-block__items">Hi-fi Screens · Color Systems · Typography · Grid · WCAG 2.1 AA</p>
               </div>
               <div class="skill-block">
                 <p class="skill-block__title">Design Systems</p>
-                <p class="skill-block__items">Tokens · Variants · Auto Layout Figma Variables · Dev Handoff</p>
+                <p class="skill-block__items">Tokens · Variants · Auto Layout · Figma Variables · Dev Handoff</p>
               </div>
             </div>
           </div>
@@ -132,14 +126,9 @@
     </section>
 
 
-    <!-- ── WHERE I'M GOING (closing CTA) ── -->
+    <!-- ── WHERE I'M GOING ── -->
     <section class="about-closing">
       <div class="about-closing__bg">
-        <!--
-          REPLACE YOUR IMAGE HERE
-          A second portrait, dramatic angle — same grayscale editorial look
-          Size: 1440×900px
-        -->
         <img
           src="assets/images/about-closing-portrait.svg"
           alt=""

@@ -5,20 +5,17 @@
 .nav {
   position: fixed;
   top: 0; left: 0; right: 0;
-  z-index: 1000;
+  z-index: var(--z-nav);
   height: var(--nav-height);
   display: flex;
   align-items: center;
-  transition: background var(--dur-normal) var(--ease-out),
-              backdrop-filter var(--dur-normal) var(--ease-out),
-              border-color var(--dur-normal) var(--ease-out);
 }
 
 .nav::before {
   content: '';
   position: absolute;
   inset: 0;
-  background: rgba(10,10,10,0);
+  background: rgba(10, 10, 10, 0);
   backdrop-filter: blur(0px);
   border-bottom: 1px solid transparent;
   transition: background var(--dur-normal) var(--ease-out),
@@ -26,9 +23,8 @@
               border-color var(--dur-normal) var(--ease-out);
   z-index: -1;
 }
-
 .nav.scrolled::before {
-  background: rgba(10,10,10,0.85);
+  background: rgba(10, 10, 10, 0.88);
   backdrop-filter: blur(20px) saturate(180%);
   border-color: var(--color-border);
 }
@@ -41,6 +37,7 @@
   max-width: var(--container-max);
   margin: 0 auto;
   padding: 0 var(--gutter);
+  gap: var(--space-8);
 }
 
 /* ── Logo ── */
@@ -51,42 +48,38 @@
   text-decoration: none;
   color: var(--color-text-primary);
   transition: opacity var(--dur-fast);
+  flex-shrink: 0;
 }
-.nav__logo:hover { opacity: 0.7; }
+.nav__logo:hover { opacity: 0.75; }
 
+/* Geometric SR logo mark (SVG injected) */
 .nav__logo-mark {
-  width: 38px; height: 38px;
-  border-radius: var(--radius-full);
-  background: var(--color-surface);
-  border: 1px solid var(--color-border);
+  width: 32px;
+  height: 32px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: var(--font-display);
-  font-weight: var(--weight-bold);
-  font-size: var(--text-sm);
-  letter-spacing: var(--tracking-wide);
-  color: var(--color-text-primary);
   flex-shrink: 0;
-  transition: border-color var(--dur-normal), background var(--dur-normal);
 }
-.nav__logo:hover .nav__logo-mark {
-  border-color: var(--color-accent);
-  background: var(--color-accent-dim);
+.nav__logo-mark svg {
+  width: 100%;
+  height: 100%;
 }
 
 .nav__logo-name {
   font-family: var(--font-display);
-  font-weight: var(--weight-medium);
+  font-weight: var(--weight-semibold);
   font-size: var(--text-sm);
   letter-spacing: 0.01em;
+  color: var(--color-text-primary);
 }
 
-/* ── Links ── */
+/* ── Desktop Links ── */
 .nav__links {
   display: flex;
   align-items: center;
   gap: var(--space-8);
+  margin: 0 auto;
 }
 
 .nav__link {
@@ -97,107 +90,151 @@
   letter-spacing: 0.01em;
   position: relative;
   padding: var(--space-2) 0;
+  min-height: 44px;  /* tap target */
+  display: inline-flex;
+  align-items: center;
   transition: color var(--dur-fast);
 }
-
 .nav__link::after {
   content: '';
   position: absolute;
-  bottom: 0; left: 0;
+  bottom: 4px; left: 0;
   width: 0; height: 1px;
   background: var(--color-text-primary);
   transition: width var(--dur-normal) var(--ease-out);
 }
-.nav__link:hover { color: var(--color-text-primary); }
-.nav__link:hover::after { width: 100%; }
-.nav__link.active {
-  color: var(--color-text-primary);
-  font-weight: var(--weight-medium);
-}
+.nav__link:hover         { color: var(--color-text-primary); }
+.nav__link:hover::after  { width: 100%; }
+.nav__link.active        { color: var(--color-text-primary); font-weight: var(--weight-medium); }
 .nav__link.active::after { width: 100%; }
 
-/* ── CTA Button ── */
+/* ── Nav CTA Button ── */
 .btn-nav {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: var(--space-2);
   padding: 10px 22px;
+  min-height: 44px;
   border-radius: var(--radius-full);
-  border: 1.5px solid var(--color-text-primary);
+  border: 1.5px solid rgba(255, 255, 255, 0.25);
   background: transparent;
   color: var(--color-text-primary);
   font-family: var(--font-body);
   font-size: var(--text-sm);
   font-weight: var(--weight-medium);
   letter-spacing: 0.01em;
+  white-space: nowrap;
+  flex-shrink: 0;
   transition: background var(--dur-normal) var(--ease-out),
               color var(--dur-normal) var(--ease-out),
-              transform var(--dur-normal) var(--ease-spring),
-              border-color var(--dur-normal);
-  white-space: nowrap;
+              border-color var(--dur-normal),
+              transform var(--dur-normal) var(--ease-spring);
 }
 .btn-nav:hover {
   background: var(--color-text-primary);
   color: var(--color-bg);
+  border-color: var(--color-text-primary);
   transform: scale(1.02);
 }
+.btn-nav:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+}
 
-/* ── Mobile Menu Button ── */
+/* ── Mobile Hamburger Button ── */
 .nav__menu-btn {
   display: none;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 5px;
-  width: 40px; height: 40px;
+  width: 44px;
+  height: 44px;
   background: none;
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
-  padding: 10px;
+  padding: var(--space-3);
+  flex-shrink: 0;
   transition: border-color var(--dur-fast), background var(--dur-fast);
 }
-.nav__menu-btn:hover { border-color: var(--color-border-hover); background: var(--color-surface); }
+.nav__menu-btn:hover {
+  border-color: var(--color-border-hover);
+  background: var(--color-surface);
+}
+.nav__menu-btn:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+}
 
 .nav__menu-btn span {
   display: block;
-  width: 18px; height: 1.5px;
+  width: 18px;
+  height: 1.5px;
   background: var(--color-text-primary);
   border-radius: 2px;
-  transition: transform var(--dur-normal) var(--ease-out), opacity var(--dur-normal);
+  transition: transform var(--dur-normal) var(--ease-out),
+              opacity var(--dur-normal),
+              width var(--dur-normal) var(--ease-out);
 }
-
+/* Open state — X */
 .nav__menu-btn.open span:nth-child(1) { transform: rotate(45deg) translate(4.5px, 4.5px); }
-.nav__menu-btn.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+.nav__menu-btn.open span:nth-child(2) { opacity: 0; width: 0; }
 .nav__menu-btn.open span:nth-child(3) { transform: rotate(-45deg) translate(4.5px, -4.5px); }
 
 /* ── Mobile Drawer ── */
 .nav__drawer {
   position: fixed;
-  top: var(--nav-height); left: 0; right: 0;
-  background: rgba(10,10,10,0.97);
-  backdrop-filter: blur(24px);
+  top: var(--nav-height);
+  left: 0; right: 0;
+  background: rgba(10, 10, 10, 0.97);
+  backdrop-filter: blur(24px) saturate(180%);
   border-bottom: 1px solid var(--color-border);
-  padding: var(--space-6) var(--gutter) var(--space-8);
+  padding: var(--space-6) var(--gutter) var(--space-10);
   display: flex;
   flex-direction: column;
-  gap: var(--space-3);
-  z-index: 999;
-  transform: translateY(-110%);
+  gap: var(--space-2);
+  z-index: var(--z-drawer);
+  /* Hidden state */
+  transform: translateY(-8px);
   opacity: 0;
-  transition: transform var(--dur-normal) var(--ease-out),
-              opacity var(--dur-normal) var(--ease-out);
   pointer-events: none;
+  visibility: hidden;
+  transition: transform var(--dur-normal) var(--ease-out),
+              opacity var(--dur-normal) var(--ease-out),
+              visibility 0s linear var(--dur-normal);
 }
 .nav__drawer.open {
   transform: translateY(0);
   opacity: 1;
   pointer-events: all;
+  visibility: visible;
+  transition: transform var(--dur-normal) var(--ease-out),
+              opacity var(--dur-normal) var(--ease-out),
+              visibility 0s linear 0s;
 }
-.nav__drawer .nav__link { font-size: var(--text-md); padding: var(--space-3) 0; }
-.nav__drawer .btn-nav { margin-top: var(--space-4); align-self: flex-start; }
+
+/* Drawer links */
+.nav__drawer .nav__link {
+  font-size: var(--text-md);
+  padding: var(--space-4) 0;
+  min-height: 44px;
+  border-bottom: 1px solid var(--color-border);
+  width: 100%;
+}
+.nav__drawer .nav__link:last-of-type { border-bottom: none; }
+
+/* Drawer CTA */
+.nav__drawer .btn-nav {
+  margin-top: var(--space-5);
+  align-self: flex-start;
+  padding: 12px 28px;
+}
 
 /* ── Responsive ── */
 @media (max-width: 768px) {
-  .nav__links { display: none; }
+  .nav__links  { display: none; }
   .nav__menu-btn { display: flex; }
+  /* Hide desktop CTA on mobile — it's in the drawer */
+  .nav__inner > .btn-nav { display: none; }
 }

@@ -2,7 +2,9 @@
    BASE — Reset & Global Styles
    ============================================ */
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -23,54 +25,70 @@ body {
   font-size: var(--text-base);
   font-weight: var(--weight-regular);
   line-height: var(--leading-normal);
-  overflow-x: default;
+  overflow-x: hidden;
+  /* fixed: was 'default' which is invalid */
   cursor: default;
 }
 
 /* ── Custom Cursor ── */
 .cursor {
   position: fixed;
-  top: 0; left: 0;
-  width: 10px; height: 10px;
+  top: 0;
+  left: 0;
+  width: 8px;
+  height: 8px;
   background: var(--color-white);
   border-radius: var(--radius-full);
   pointer-events: none;
-  z-index: 9999;
+  z-index: var(--z-cursor);
   transform: translate(-50%, -50%);
   transition: width var(--dur-fast) var(--ease-out),
-              height var(--dur-fast) var(--ease-out),
-              background var(--dur-fast) var(--ease-out),
-              opacity var(--dur-fast);
+    height var(--dur-fast) var(--ease-out),
+    background var(--dur-fast) var(--ease-out),
+    opacity var(--dur-fast);
   mix-blend-mode: difference;
+  will-change: left, top;
 }
 
 .cursor-follower {
   position: fixed;
-  top: 0; left: 0;
-  width: 36px; height: 36px;
-  border: 1.5px solid rgba(255,255,255,0.4);
+  top: 0;
+  left: 0;
+  width: 32px;
+  height: 32px;
+  border: 1.5px solid rgba(255, 255, 255, 0.35);
   border-radius: var(--radius-full);
   pointer-events: none;
-  z-index: 9998;
+  z-index: calc(var(--z-cursor) - 1);
   transform: translate(-50%, -50%);
-  transition: transform 0.12s var(--ease-out),
-              width var(--dur-normal) var(--ease-out),
-              height var(--dur-normal) var(--ease-out),
-              border-color var(--dur-normal) var(--ease-out),
-              opacity var(--dur-normal);
+  transition: width var(--dur-normal) var(--ease-out),
+    height var(--dur-normal) var(--ease-out),
+    border-color var(--dur-normal) var(--ease-out),
+    opacity var(--dur-normal);
+  will-change: left, top;
 }
-.cursor.cursor--hover { width: 6px; height: 6px; }
+
+/* Cursor states */
+.cursor.cursor--hover {
+  width: 5px;
+  height: 5px;
+}
+
 .cursor-follower.cursor--hover {
-  width: 56px; height: 56px;
+  width: 48px;
+  height: 48px;
   border-color: var(--color-accent);
 }
 
-.cursor.cursor--link { background: var(--color-accent); }
+.cursor.cursor--link {
+  background: var(--color-accent);
+}
+
 .cursor-follower.cursor--project {
-  width: 100px; height: 100px;
-  background: rgba(0,217,126,0.1);
+  width: 96px;
+  height: 96px;
+  background: rgba(0, 217, 126, 0.08);
   border-color: var(--color-accent);
-  backdrop-filter: blur(4px);
 }
 
 /* ── Selection ── */
@@ -80,10 +98,22 @@ body {
 }
 
 /* ── Scrollbar ── */
-::-webkit-scrollbar { width: 4px; }
-::-webkit-scrollbar-track { background: var(--color-bg); }
-::-webkit-scrollbar-thumb { background: var(--color-surface); border-radius: var(--radius-full); }
-::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,0.2); }
+::-webkit-scrollbar {
+  width: 3px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-surface);
+  border-radius: var(--radius-full);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
 
 /* ── Links ── */
 a {
@@ -100,7 +130,10 @@ img {
 }
 
 /* ── Lists ── */
-ul, ol { list-style: none; }
+ul,
+ol {
+  list-style: none;
+}
 
 /* ── Buttons ── */
 button {
@@ -112,10 +145,11 @@ button {
 }
 
 /* ── Inputs ── */
-input, textarea, select {
+input,
+textarea,
+select {
   font-family: var(--font-body);
   font-size: inherit;
-  cursor: none;
 }
 
 /* ── Page Transition Overlay ── */
@@ -123,7 +157,7 @@ input, textarea, select {
   position: fixed;
   inset: 0;
   background: var(--color-bg);
-  z-index: 10000;
+  z-index: var(--z-transition);
   transform: translateY(100%);
   pointer-events: none;
 }
@@ -131,17 +165,29 @@ input, textarea, select {
 .page-transition.entering {
   animation: pageEnter var(--dur-slow) var(--ease-out) forwards;
 }
+
 .page-transition.leaving {
   animation: pageLeave var(--dur-slow) var(--ease-out) forwards;
 }
 
 @keyframes pageEnter {
-  from { transform: translateY(0); }
-  to   { transform: translateY(-100%); }
+  from {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(-100%);
+  }
 }
+
 @keyframes pageLeave {
-  from { transform: translateY(100%); }
-  to   { transform: translateY(0); }
+  from {
+    transform: translateY(100%);
+  }
+
+  to {
+    transform: translateY(0);
+  }
 }
 
 /* ── Container ── */
@@ -153,57 +199,125 @@ input, textarea, select {
 }
 
 /* ── Section ── */
-.section { padding: var(--space-32) 0; }
-.section--lg { padding: var(--space-40) 0; }
+.section {
+  padding: var(--space-32) 0;
+}
+
+.section--lg {
+  padding: var(--space-40) 0;
+}
 
 /* ── Utility ── */
 .sr-only {
   position: absolute;
-  width: 1px; height: 1px;
-  padding: 0; margin: -1px;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
   overflow: hidden;
-  clip: rect(0,0,0,0);
+  clip: rect(0, 0, 0, 0);
   white-space: nowrap;
   border: 0;
 }
 
-.overflow-hidden { overflow: hidden; }
-.relative { position: relative; }
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.relative {
+  position: relative;
+}
 
 /* ── Reveal Animations ── */
 .reveal {
   opacity: 0;
-  transform: translateY(40px);
+  transform: translateY(32px);
   transition: opacity var(--dur-slower) var(--ease-out),
-              transform var(--dur-slower) var(--ease-out);
+    transform var(--dur-slower) var(--ease-out);
 }
+
 .reveal.is-visible {
   opacity: 1;
   transform: translateY(0);
 }
-.reveal--delay-1 { transition-delay: 100ms; }
-.reveal--delay-2 { transition-delay: 200ms; }
-.reveal--delay-3 { transition-delay: 300ms; }
-.reveal--delay-4 { transition-delay: 400ms; }
-.reveal--delay-5 { transition-delay: 500ms; }
+
+.reveal--delay-1 {
+  transition-delay: 100ms;
+}
+
+.reveal--delay-2 {
+  transition-delay: 200ms;
+}
+
+.reveal--delay-3 {
+  transition-delay: 300ms;
+}
+
+.reveal--delay-4 {
+  transition-delay: 400ms;
+}
+
+.reveal--delay-5 {
+  transition-delay: 500ms;
+}
 
 .reveal--left {
-  transform: translateX(-40px);
+  transform: translateX(-32px);
 }
-.reveal--left.is-visible { transform: translateX(0); }
+
+.reveal--left.is-visible {
+  transform: translateX(0);
+}
 
 .reveal--right {
-  transform: translateX(40px);
+  transform: translateX(32px);
 }
-.reveal--right.is-visible { transform: translateX(0); }
 
-/* ── Noise overlay ── */
+.reveal--right.is-visible {
+  transform: translateX(0);
+}
+
+/* ── Noise overlay (subtle grain texture) ── */
 body::after {
   content: '';
   position: fixed;
   inset: 0;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
-  opacity: 0.022;
+  opacity: 0.018;
   pointer-events: none;
-  z-index: 9997;
+  z-index: var(--z-overlay);
+}
+
+/* ── Mobile: hide custom cursor on touch devices ── */
+@media (hover: none) {
+
+  .cursor,
+  .cursor-follower,
+  .cursor-project-label {
+    display: none !important;
+  }
+
+  a,
+  button,
+  .btn,
+  .btn-nav,
+  input,
+  textarea,
+  select,
+  [role="button"] {
+    cursor: pointer !important;
+  }
+
+  @media (max-width: 768px) {
+    .cursor-project-label {
+      display: none !important;
+    }
+  }
+}
+
+/* ── Responsive base font scale ── */
+@media (max-width: 480px) {
+  html {
+    font-size: 15px;
+  }
 }

@@ -1,58 +1,108 @@
 /**
- * CONTACT.JS — Form handling
+ * CONTACT.JS — Form submission via Formspree
  */
 (function initContactForm() {
   const form   = document.getElementById('contactForm');
   const submit = document.getElementById('submitBtn');
   if (!form || !submit) return;
 
-  form.addEventListener('submit', (e) => {
-    e.preventDefault();
+  // Create accessible live region for feedback
+  let statusEl = document.getElementById('form-status');
+  if (!statusEl) {
+    statusEl = document.createElement('p');
+    statusEl.id = 'form-status';
+    statusEl.setAttribute('aria-live', 'polite');
+    statusEl.setAttribute('aria-atomic', 'true');
+    statusEl.style.cssText = 'font-size:0.75rem;color:var(--color-text-muted);text-align:center;margin-top:12px;min-height:20px;';
+    submit.parentNode.insertBefore(statusEl, submit.nextSibling);
+  }
 
-    // Basic validation
+  const setStatus = (msg, isError) => {
+    statusEl.textContent = msg;
+    statusEl.style.color = isError ? 'var(--color-error)' : 'var(--color-text-muted)';
+  };
+
+  // Mark field as invalid
+  const markInvalid = (field) => {
+    field.classList.add('error');
+    field.setAttribute('aria-invalid', 'true');
+    field.addEventListener('input', () => {
+      field.classList.remove('error');
+      field.removeAttribute('aria-invalid');
+    }, { once: true });
+  };
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    setStatus('');
+
+    // ── Validation ──
     let valid = true;
+
     form.querySelectorAll('[required]').forEach(field => {
       if (!field.value.trim()) {
         valid = false;
-        field.style.borderColor = 'rgba(255,80,80,0.5)';
-        field.addEventListener('input', () => field.style.borderColor = '', { once: true });
+        markInvalid(field);
       }
     });
-    if (!valid) return;
 
-    // Email format
+    // Email format check
     const emailField = form.querySelector('[type="email"]');
-    if (emailField && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailField.value)) {
-      emailField.style.borderColor = 'rgba(255,80,80,0.5)';
+    if (emailField && emailField.value.trim()) {
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(emailField.value.trim())) {
+        valid = false;
+        markInvalid(emailField);
+        setStatus('Please enter a valid email address.', true);
+        emailField.focus();
+        return;
+      }
+    }
+
+    if (!valid) {
+      setStatus('Please fill in all required fields.', true);
+      // Focus the first invalid field
+      const firstInvalid = form.querySelector('.error');
+      if (firstInvalid) firstInvalid.focus();
       return;
     }
 
-    // Send message
+    // ── Submit ──
+    const originalText = submit.textContent;
     submit.textContent = 'Sending…';
-    submit.disabled = true;
+    submit.disabled    = true;
+    setStatus('Sending your message…');
 
-    fetch('https://formspree.io/f/mrerayra', {
-      method: 'POST',
-      body: new FormData(form),
-      headers: { 'Accept': 'application/json' }
-    })
-    .then(res => {
+    try {
+      const res = await fetch('https://formspree.io/f/mrerayra', {
+        method:  'POST',
+        body:    new FormData(form),
+        headers: { 'Accept': 'application/json' }
+      });
+
       if (res.ok) {
-        submit.textContent = '✓ Message sent — I\'ll be in touch soon!';
+        submit.textContent = '✓ Message sent!';
         submit.classList.add('form-submit--success');
+        setStatus("I'll be in touch within 24 hours.");
         form.reset();
+
         setTimeout(() => {
-          submit.textContent = 'Send Message';
+          submit.textContent = originalText;
           submit.classList.remove('form-submit--success');
-        }, 4000);
+          submit.disabled = false;
+          setStatus('');
+        }, 5000);
       } else {
-        submit.textContent = 'Something went wrong. Try again.';
+        const data = await res.json().catch(() => ({}));
+        const msg  = data?.errors?.[0]?.message || 'Something went wrong. Please try again.';
+        submit.textContent = originalText;
+        submit.disabled    = false;
+        setStatus(msg, true);
       }
-      submit.disabled = false;
-    })
-    .catch(() => {
-      submit.textContent = 'Something went wrong. Try again.';
-      submit.disabled = false;
-    });
+    } catch {
+      submit.textContent = originalText;
+      submit.disabled    = false;
+      setStatus('Network error. Please check your connection and try again.', true);
+    }
   });
 })();

@@ -1,9 +1,13 @@
 /* ============================================
    DESIGN TOKENS — Shiva Ram Portfolio
    Dark editorial aesthetic
+   Fonts: Clash Display (Fontshare) + Inter (Google)
    ============================================ */
 
-@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300;1,9..40,400&display=swap');
+/* Clash Display via Fontshare */
+@import url('https://api.fontshare.com/v2/css?f[]=clash-display@400,500,600,700&display=swap');
+/* Inter via Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
 
 :root {
   /* ── Colors ── */
@@ -13,49 +17,58 @@
   --color-bg-elevated:  #1a1a1a;
   --color-surface:      #1e1e1e;
 
-  --color-border:       rgba(255,255,255,0.08);
-  --color-border-hover: rgba(255,255,255,0.18);
+  --color-border:       rgba(255, 255, 255, 0.08);
+  --color-border-hover: rgba(255, 255, 255, 0.18);
 
   --color-text-primary:   #ffffff;
-  --color-text-secondary: rgba(255,255,255,0.55);
-  --color-text-muted:     rgba(255,255,255,0.30);
-  --color-text-label:     rgba(255,255,255,0.40);
+  --color-text-secondary: rgba(255, 255, 255, 0.55);
+  --color-text-muted:     rgba(255, 255, 255, 0.30);
+  --color-text-label:     rgba(255, 255, 255, 0.40);
 
-  --color-accent:         #00d97e;
-  --color-accent-dim:     rgba(0,217,126,0.12);
-  --color-accent-glow:    rgba(0,217,126,0.25);
+  --color-accent:      #00d97e;
+  --color-accent-dim:  rgba(0, 217, 126, 0.12);
+  --color-accent-glow: rgba(0, 217, 126, 0.25);
 
-  --color-white:   #ffffff;
-  --color-black:   #000000;
+  --color-error:       rgba(255, 80, 80, 0.8);
+  --color-error-dim:   rgba(255, 80, 80, 0.15);
+
+  --color-white: #ffffff;
+  --color-black: #000000;
 
   /* ── Typography ── */
-  --font-display: 'Syne', sans-serif;
-  --font-body:    'DM Sans', sans-serif;
+  --font-display: 'Clash Display', sans-serif;
+  --font-body:    'Inter', sans-serif;
 
-  --text-xs:   0.6875rem;   /* 11px */
-  --text-sm:   0.8125rem;   /* 13px */
-  --text-base: 0.9375rem;   /* 15px */
-  --text-md:   1.0625rem;   /* 17px */
-  --text-lg:   1.25rem;     /* 20px */
-  --text-xl:   1.5rem;      /* 24px */
-  --text-2xl:  2rem;        /* 32px */
-  --text-3xl:  2.75rem;     /* 44px */
-  --text-4xl:  3.5rem;      /* 56px */
-  --text-5xl:  4.5rem;      /* 72px */
-  --text-6xl:  6rem;        /* 96px */
+  /* Type Scale */
+  --text-xs:   0.75rem;   /* 12px */
+  --text-sm:   0.875rem;  /* 14px */
+  --text-base: 1rem;      /* 16px */
+  --text-md:   1.125rem;  /* 18px */
+  --text-lg:   1.25rem;   /* 20px */
+  --text-xl:   1.5rem;    /* 24px */
+  --text-2xl:  2rem;      /* 32px */
+  --text-3xl:  2.5rem;    /* 40px */
+  --text-4xl:  3.5rem;    /* 56px */
+  --text-5xl:  4.5rem;    /* 72px */
 
-  --weight-light:   300;
-  --weight-regular: 400;
-  --weight-medium:  500;
-  --weight-semibold:600;
-  --weight-bold:    700;
-  --weight-extrabold:800;
+  /* Fluid type for hero headline */
+  --text-hero: clamp(2.5rem, 6vw, 4rem);
 
-  --leading-tight:  1.1;
-  --leading-snug:   1.25;
-  --leading-normal: 1.5;
-  --leading-relaxed:1.7;
+  /* Weights */
+  --weight-light:     300;
+  --weight-regular:   400;
+  --weight-medium:    500;
+  --weight-semibold:  500;
+  --weight-bold:      500;
 
+  /* Line Heights */
+  --leading-none:     1;
+  --leading-tight:    1.1;
+  --leading-snug:     1.25;
+  --leading-normal:   1.5;
+  --leading-relaxed:  1.7;
+
+  /* Letter Spacing */
   --tracking-tight:  -0.03em;
   --tracking-normal:  0em;
   --tracking-wide:    0.06em;
@@ -86,10 +99,10 @@
   --radius-full: 9999px;
 
   /* ── Shadows ── */
-  --shadow-sm:  0 2px 8px rgba(0,0,0,0.4);
-  --shadow-md:  0 8px 32px rgba(0,0,0,0.5);
-  --shadow-lg:  0 20px 60px rgba(0,0,0,0.6);
-  --shadow-xl:  0 40px 80px rgba(0,0,0,0.7);
+  --shadow-sm:   0 2px 8px rgba(0, 0, 0, 0.4);
+  --shadow-md:   0 8px 32px rgba(0, 0, 0, 0.5);
+  --shadow-lg:   0 20px 60px rgba(0, 0, 0, 0.6);
+  --shadow-xl:   0 40px 80px rgba(0, 0, 0, 0.7);
   --shadow-glow: 0 0 40px var(--color-accent-glow);
 
   /* ── Transitions ── */
@@ -105,6 +118,16 @@
   /* ── Layout ── */
   --container-max:  1280px;
   --container-wide: 1440px;
-  --gutter:         clamp(24px, 5vw, 80px);
+  --gutter:         clamp(20px, 5vw, 80px);
   --nav-height:     72px;
+
+  /* ── Z-index scale ── */
+  --z-base:       1;
+  --z-dropdown:   100;
+  --z-sticky:     200;
+  --z-nav:        1000;
+  --z-drawer:     999;
+  --z-overlay:    9997;
+  --z-cursor:     9999;
+  --z-transition: 10000;
 }

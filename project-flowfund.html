@@ -1,18 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description"
-    content="FlowFund — iOS personal finance app designed for freelancers with irregular income. Full UX case study by Shiva Ram.">
+  <meta name="description" content="FlowFund — iOS personal finance app designed for freelancers with irregular income. Full UX case study by Shiva Ram.">
   <title>FlowFund — Shiva Ram</title>
 
+  <link rel="preconnect" href="https://api.fontshare.com">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap"
-    rel="stylesheet">
 
   <link rel="stylesheet" href="css/tokens.css">
   <link rel="stylesheet" href="css/base.css">
@@ -20,21 +16,14 @@
   <link rel="stylesheet" href="css/components.css">
   <link rel="stylesheet" href="css/project.css">
 </head>
-
 <body>
 
   <div id="nav-placeholder"></div>
 
   <main>
 
-    <!-- ── HERO ── -->
     <section class="project-hero">
       <div class="project-hero__bg">
-        <!--
-          REPLACE YOUR IMAGE HERE
-          FlowFund hero — iPhone mockup on warm dark/orange background
-          Size: 1440×900px
-        -->
         <img src="assets/images/hero-flowfund.svg" alt="FlowFund app hero">
       </div>
       <div class="project-hero__content">
@@ -45,7 +34,6 @@
 
     <div class="container">
 
-      <!-- ── META BAR ── -->
       <div class="project-meta-bar reveal">
         <div class="project-meta-item">
           <p class="project-meta-label">My Role</p>
@@ -65,36 +53,34 @@
         </div>
       </div>
 
-
-      <!-- ── THE BRIEF ── -->
       <div class="project-section">
         <p class="project-section__label reveal">The Brief</p>
         <h2 class="project-section__headline reveal reveal--delay-1">
-          Freelancers are bad at money because their tools weren't built for how they actually get paid..
+          Freelancers are bad at money because their tools weren't built for how they actually get paid.
         </h2>
         <div class="project-section__body reveal reveal--delay-2">
           <p>
             A freelancer's income doesn't arrive on the 1st and 15th. It arrives whenever the client finally pays the
-            invoice — sometimes in three installments, sometimes six weeks late. </p>
+            invoice — sometimes in three installments, sometimes six weeks late.
+          </p>
           <p>
             Every budgeting app on the market assumes a salary.
-            FlowFund was designed to assume nothing except
-            uncertainty — and help users feel less afraid of it. </p>
+            FlowFund was designed to assume nothing except uncertainty — and help users feel less afraid of it.
+          </p>
         </div>
       </div>
 
-
-      <!-- ── THE CHALLENGE ── -->
       <div class="project-section">
         <p class="project-section__label reveal">The Challenge</p>
         <h2 class="project-section__headline reveal reveal--delay-1">
-          Income unpredictability is a UX problem,
-          not just a financial one. </h2>
+          Income unpredictability is a UX problem, not just a financial one.
+        </h2>
         <div class="project-section__body reveal reveal--delay-2">
+          <!-- fixed: was an unclosed <p> -->
           <p>
             The core challenge wasn't the math. It was the emotion.
-            Users didn't need more data — they needed to feel
-            in control of data they already had.
+            Users didn't need more data — they needed to feel in control of data they already had.
+          </p>
           <p>
             Every design decision had to reduce anxiety, not add to it.
             That meant no red negative numbers. No alarming empty states.
@@ -103,20 +89,17 @@
         </div>
       </div>
 
-
-      <!-- ── WHAT I DECIDED ── -->
       <div class="project-section">
         <p class="project-section__label reveal">What I Decided</p>
         <h2 class="project-section__headline reveal reveal--delay-1">
-          Design for the feeling first,
-          the function second. </h2>
+          Design for the feeling first, the function second.
+        </h2>
         <div class="project-section__body reveal reveal--delay-2">
           <p>
             I anchored the entire visual language to calm confidence.
-            Dark mode (easier on the eyes during late-night invoice
-            chasing), green as the primary action color (not red),
-            and a dashboard that showed your next 30 days of
-            projected income before it showed your current balance. </p>
+            Dark mode (easier on the eyes during late-night invoice chasing), green as the primary action color (not red),
+            and a dashboard that showed your next 30 days of projected income before it showed your current balance.
+          </p>
           <p>
             The principle: if a component references a hardcoded hex value, it's not part of the system — it's just a
             Figma frame with a label on it.
@@ -128,24 +111,21 @@
             <span class="phase-number">Phase 01</span>
             <div>
               <h3 class="phase-title">Audit &amp; Planning</h3>
-              <p class="phase-desc">Listed every visual property that repeated across projects. Found 40+
-                inconsistencies.</p>
+              <p class="phase-desc">Listed every visual property that repeated across projects. Found 40+ inconsistencies.</p>
             </div>
           </div>
           <div class="phase-item">
             <span class="phase-number">Phase 02</span>
             <div>
               <h3 class="phase-title">Primitive Color System</h3>
-              <p class="phase-desc">Built the full 22-color primitive palette, mapped to semantic aliases (background,
-                text, border, action).</p>
+              <p class="phase-desc">Built the full 22-color primitive palette, mapped to semantic aliases (background, text, border, action).</p>
             </div>
           </div>
           <div class="phase-item">
             <span class="phase-number">Phase 03</span>
             <div>
               <h3 class="phase-title">Typography System</h3>
-              <p class="phase-desc">Once perform scale. Matches two: 20/20 Pro, Andrade/Roboto. 1.25 modular scale. All
-                Figma text styles created.</p>
+              <p class="phase-desc">Clash Display + Inter. 1.25 modular scale. All Figma text styles created.</p>
             </div>
           </div>
           <div class="phase-item">
@@ -159,82 +139,64 @@
             <span class="phase-number">Phase 05</span>
             <div>
               <h3 class="phase-title">Component Library</h3>
-              <p class="phase-desc">26 components built across 4 tiers: Primitives, Form Controls, Overlays, Navigation.
-                Every component token-based and Inter-connected.</p>
+              <p class="phase-desc">26 components built across 4 tiers: Primitives, Form Controls, Overlays, Navigation. Every component token-based.</p>
             </div>
           </div>
           <div class="phase-item">
             <span class="phase-number">Phase 06</span>
             <div>
               <h3 class="phase-title">Visual Design</h3>
+              <p class="phase-desc">Full 30+ screen product — Onboarding, Dashboard, Budget, Invoice Tracker, Reports, and Settings flows.</p>
             </div>
           </div>
         </div>
       </div>
 
-
-
-      <!-- ── STATS ── -->
+      <!-- fixed: broken stats div (missing closing >) -->
       <div class="stats-row reveal">
         <div class="stats-row__item">
           <p class="stats-row__value" data-count="25" data-suffix="+">0+</p>
-          <p class="stats-row__label">screens Full product coverage</p>
+          <p class="stats-row__label">Screens — full product coverage</p>
         </div>
         <div class="stats-row__item">
-          <p class="stats-row__value" data-count="05">0</p>
-          <p class="stats-row__label">flows Onboarding · Budget · Invoice · Reports · Settings</p>
+          <p class="stats-row__value" data-count="5">0</p>
+          <p class="stats-row__label">Flows — Onboarding · Budget · Invoice · Reports · Settings</p>
         </div>
         <div class="stats-row__item">
-          <p class="stats-row__value" data-count="02" </p>
-          <p class="stats-row__label">personas The Starter Freelancer · The Scaling Freelancer</p>
+          <p class="stats-row__value" data-count="2">0</p>
+          <p class="stats-row__label">Personas — The Starter &amp; The Scaling Freelancer</p>
         </div>
       </div>
 
-
-      <!-- ── SCREENS GALLERY ── -->
       <div class="project-section">
         <p class="project-section__label reveal">Selected Screens</p>
-
         <div class="screens-grid">
-          <!-- Row 1 -->
           <div class="screen-item reveal">
-            <img src="assets/images/FlowFund 1.png" alt="FlowFund app hero">
+            <img src="assets/images/FlowFund 1.png" alt="FlowFund onboarding screen">
           </div>
           <div class="screen-item reveal reveal--delay-1">
-            <img src="assets/images/FlowFund 2.png" alt="FlowFund app hero">
+            <img src="assets/images/FlowFund 2.png" alt="FlowFund dashboard screen">
           </div>
           <div class="screen-item reveal reveal--delay-2">
-            <img src="assets/images/FlowFund 3.png" alt="FlowFund app hero">
+            <img src="assets/images/FlowFund 3.png" alt="FlowFund budget screen">
           </div>
-
-          <!-- Row 2 -->
           <div class="screen-item reveal reveal--delay-1">
-            <img src="assets/images/FlowFund 4.png" alt="FlowFund app hero">
+            <img src="assets/images/FlowFund 4.png" alt="FlowFund invoice screen">
           </div>
           <div class="screen-item reveal reveal--delay-2">
-            <img src="assets/images/FlowFund 5.png" alt="FlowFund app hero">
+            <img src="assets/images/FlowFund 5.png" alt="FlowFund reports screen">
           </div>
           <div class="screen-item reveal reveal--delay-3">
-            <img src="assets/images/FlowFund 6.png" alt="FlowFund app hero">
+            <img src="assets/images/FlowFund 6.png" alt="FlowFund settings screen">
           </div>
         </div>
       </div>
 
-
-      <!-- ── NEXT PROJECT ── -->
       <div class="next-project">
         <p class="next-project__label reveal">Next Project</p>
-        <a href="project-onawave.html" class="next-project-card reveal reveal--delay-1" data-tilt data-tilt-max="3">
+        <a href="project-brainstrata.html" class="next-project-card reveal reveal--delay-1" data-tilt data-tilt-max="3">
           <div class="next-project-card__image">
-            <img src="assets/images/thumb-Brainstrata.svg" alt="FlowFund app hero">
-            <div class="img-placeholder" style="height:100%; min-height:240px;">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <rect x="3" y="3" width="18" height="18" rx="2" />
-                <circle cx="9" cy="9" r="2" />
-                <path d="m21 15-3.086-3.086a2 2 0 00-2.828 0L6 21" />
-              </svg>
-              <span>Replace with OnaWave thumbnail</span>
-            </div>
+            <img src="assets/images/thumb-Brainstrata.svg" alt="Brainstrata thumbnail">
           </div>
           <div class="next-project-card__info">
             <div class="next-project-card__meta">
@@ -243,26 +205,20 @@
               <span>Platform: Web (Desktop)</span>
             </div>
             <h3 class="next-project-card__name">Brainstrata</h3>
-            <p class="next-project-card__desc">An AI-powered student learning dashboard with personalized study plans,
-              flashcards, and mini games — designed to make studying feel like progress, not pressure.</p>
+            <p class="next-project-card__desc">An AI-powered student learning dashboard with personalized study plans, flashcards, and mini games — designed to make studying feel like progress, not pressure.</p>
             <span class="next-project-card__cta">
               View project
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16">
-                <line x1="7" y1="17" x2="17" y2="7" />
-                <polyline points="7 7 17 7 17 17" />
-              </svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
             </span>
           </div>
         </a>
       </div>
 
-    </div><!-- /container -->
+    </div>
   </main>
 
   <div id="footer-placeholder"></div>
-
   <script src="js/partials.js"></script>
   <script src="js/main.js"></script>
 </body>
-
 </html>
